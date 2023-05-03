@@ -1,0 +1,7 @@
+Package             Version
+------------------- -------
+Django              4.2
+django-cors-headers 3.14.0
+djangorestframework 3.14.0
+PyJWT               2.6.0
+

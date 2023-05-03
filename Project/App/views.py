@@ -14,16 +14,7 @@ class RegisterViewSet(viewsets.ModelViewSet):
     queryset = CustomUser.objects.all()
     serializer_class = UserSerializer
 
-    def perform_create(self, serializer):
-        user = serializer.save()
-        send_mail(
-            'Welcome to My Website',
-            'Hi {0},\n\nThank you for registering with us. We look forward to serving you!\n\nBest,\nMy Website Team'.format(
-                user.username),
-            settings.DEFAULT_FROM_EMAIL,
-            [user.email],
-            fail_silently=False,
-        )
+
 class LoginView(APIView):
     def post(self, request):
         username = request.data['username']
